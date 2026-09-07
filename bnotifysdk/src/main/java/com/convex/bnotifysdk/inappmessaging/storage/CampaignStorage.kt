@@ -1,8 +1,8 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.storage
+package com.convex.bnotifysdk.inappmessaging.storage
 
 import android.content.Context
 import android.util.Log
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel
+import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.TimeZone

@@ -10,7 +10,7 @@ import android.content.pm.PackageManager
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
-import com.convex.bnotifyproject.Bnotify.inappmessaging.tracker.ActivityTracker
+import com.convex.bnotifysdk.inappmessaging.tracker.ActivityTracker
 import com.convex.bnotifysdk.activity.PermissionRequestActivity
 import com.convex.bnotifysdk.model.BnotifyConfig
 import com.convex.bnotifysdk.model.NotificationModel

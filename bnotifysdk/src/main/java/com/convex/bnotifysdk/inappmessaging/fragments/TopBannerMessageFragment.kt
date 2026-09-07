@@ -1,4 +1,4 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.fragments
+package com.convex.bnotifysdk.inappmessaging.fragments
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -14,7 +14,7 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.convex.bnotifyproject.R
+import com.convex.bnotifysdk.R
 
 class TopBannerMessageFragment : BaseMessageFragment() {
     override val noDimBackground: Boolean = true // no dim for banners

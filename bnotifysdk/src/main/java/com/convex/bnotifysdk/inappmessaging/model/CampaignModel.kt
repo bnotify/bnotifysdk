@@ -1,4 +1,4 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.model
+package com.convex.bnotifysdk.inappmessaging.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

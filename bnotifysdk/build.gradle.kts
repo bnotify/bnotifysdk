@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.parcelize)
     id("maven-publish")
 }
-val SDKVersion = "1.0.3" // Define once for consistency
+val SDKVersion = "1.0.4" // Define once for consistency
 
 android {
     namespace = "com.convex.bnotifysdk"
@@ -60,6 +61,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation("androidx.fragment:fragment-ktx:1.8.6")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

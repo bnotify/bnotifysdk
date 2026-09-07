@@ -1,12 +1,12 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.ui
+package com.convex.bnotifysdk.inappmessaging.ui
 
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.convex.bnotifyproject.Bnotify.inappmessaging.InAppMessenger
-import com.convex.bnotifyproject.Bnotify.inappmessaging.fragments.*
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel
-import com.convex.bnotifyproject.Bnotify.inappmessaging.storage.CampaignStorage
-import com.convex.bnotifyproject.Bnotify.inappmessaging.tracker.ActivityTracker
+import com.convex.bnotifysdk.inappmessaging.InAppMessenger
+import com.convex.bnotifysdk.inappmessaging.fragments.*
+import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
+import com.convex.bnotifysdk.inappmessaging.storage.CampaignStorage
+import com.convex.bnotifysdk.inappmessaging.tracker.ActivityTracker
 
 object MessageRenderer {
 

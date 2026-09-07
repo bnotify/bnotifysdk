@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "2.0.21"
 }
 
-val pluginVersion = "1.0.3" // Define once for consistency
+val pluginVersion = "1.0.4" // Define once for consistency
 
 repositories {
     google()

@@ -1,6 +1,6 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.matcher
+package com.convex.bnotifysdk.inappmessaging.matcher
 
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel
+import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
 
 object CampaignMatcher {
     fun match(campaigns: CampaignModel, event: String): CampaignModel? {

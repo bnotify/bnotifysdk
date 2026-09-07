@@ -1,4 +1,4 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.fragments
+package com.convex.bnotifysdk.inappmessaging.fragments
 
 import android.app.Dialog
 import android.graphics.Color
@@ -14,12 +14,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel
+import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
 import androidx.core.graphics.drawable.toDrawable
-import com.convex.bnotifyproject.Bnotify.inappmessaging.InAppMessenger
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CTA
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CTASecondary
-import com.convex.bnotifyproject.Bnotify.inappmessaging.ui.MessageRenderer
+import com.convex.bnotifysdk.inappmessaging.InAppMessenger
+import com.convex.bnotifysdk.inappmessaging.model.CTA
+import com.convex.bnotifysdk.inappmessaging.model.CTASecondary
+import com.convex.bnotifysdk.inappmessaging.ui.MessageRenderer
 import java.util.concurrent.TimeUnit
 
 abstract class BaseMessageFragment : DialogFragment() {

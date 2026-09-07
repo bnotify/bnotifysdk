@@ -18,7 +18,7 @@ import android.telephony.TelephonyManager
 import android.util.DisplayMetrics
 import android.util.Log
 import androidx.core.content.ContextCompat
-import com.convex.bnotifyproject.Bnotify.inappmessaging.InAppMessenger
+import com.convex.bnotifysdk.inappmessaging.InAppMessenger
 import com.convex.bnotifysdk.BNotifyApp
 import com.convex.bnotifysdk.activity.PermissionRequestActivity
 import com.convex.bnotifysdk.model.BNotifyTokenModel
@@ -383,7 +383,7 @@ internal object SocketManager {
             val app: Application = BNotifyApp.getApplication() ?: return@on
             val response: String = args[0].toString()
             Log.d("InAppMessenger", "BNotify InAppMessenger: ${response}")
-            val campaign = Gson().fromJson(response, com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel::class.java)
+            val campaign = Gson().fromJson(response, com.convex.bnotifysdk.inappmessaging.model.CampaignModel::class.java)
             InAppMessenger.init(app, response)
             InAppMessenger.logEvent(campaign.trigger.event)
         }.on(EVENT_REGISTERED) { args ->

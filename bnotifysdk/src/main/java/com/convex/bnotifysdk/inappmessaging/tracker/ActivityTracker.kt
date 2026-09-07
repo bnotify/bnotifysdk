@@ -1,12 +1,12 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.tracker
+package com.convex.bnotifysdk.inappmessaging.tracker
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import android.util.Log
-import com.convex.bnotifyproject.Bnotify.inappmessaging.InAppMessenger
-import com.convex.bnotifyproject.Bnotify.socket.SocketManager
+import com.convex.bnotifysdk.inappmessaging.InAppMessenger
+import com.convex.bnotifysdk.socket.SocketManager
 import org.json.JSONObject
 
 @SuppressLint("StaticFieldLeak")

@@ -1,11 +1,11 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.fetcher
+package com.convex.bnotifysdk.inappmessaging.fetcher
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import com.convex.bnotifyproject.Bnotify.inappmessaging.model.CampaignModel
-import com.convex.bnotifyproject.Bnotify.inappmessaging.storage.CampaignStorage
+import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
+import com.convex.bnotifysdk.inappmessaging.storage.CampaignStorage
 import com.google.gson.Gson
 import kotlin.concurrent.thread
 

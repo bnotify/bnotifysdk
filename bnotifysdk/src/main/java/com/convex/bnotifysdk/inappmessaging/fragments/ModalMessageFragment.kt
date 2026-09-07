@@ -1,4 +1,4 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.fragments
+package com.convex.bnotifysdk.inappmessaging.fragments
 
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.convex.bnotifyproject.R
+import com.convex.bnotifysdk.R
 
 class ModalMessageFragment : BaseMessageFragment() {
     override fun onCreateView(

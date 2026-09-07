@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:background="@drawable/inapp_card_bg"
+    android:id="@+id/rootLayout"
+    android:padding="12dp"
+    android:layout_margin="8dp"
+    android:weightSum="1"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        tools:src="@drawable/test"
+        android:layout_weight="0.3"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="10dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.7">
+
+        <TextView
+            android:id="@+id/title"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Test of our In-App Messaging system"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/message"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:text="This is a test of our in-app messaging system. If you see this, the message was delivered successfully. This is a test of our in-app messaging system. If you see this, the message was delivered successfully."/>
+
+    </LinearLayout>
+
+</LinearLayout>

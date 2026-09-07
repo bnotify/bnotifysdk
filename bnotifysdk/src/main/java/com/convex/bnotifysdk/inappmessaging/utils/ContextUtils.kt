@@ -1,4 +1,4 @@
-package com.convex.bnotifyproject.Bnotify.inappmessaging.utils
+package com.convex.bnotifysdk.inappmessaging.utils
 
 import android.app.Application
 import android.content.Context

@@ -1,10 +1,10 @@
 # BNotify Android SDK — Architecture & Code Documentation
 
 > **Package / modules:** `bnotifysdk` (library) · `bnotifyplugin` (Gradle plugin)  
-> **Maven coordinates (intended):** `com.github.bnotify.bnotifysdk:bnotifysdk:1.0.3`  
+> **Maven coordinates (intended):** `com.github.bnotify.bnotifysdk:bnotifysdk:1.0.4`  
 > **Plugin ID:** `com.github.bnotifysdk.bnotifyplugin`  
 > **Namespace:** `com.convex.bnotifysdk`  
-> **minSdk:** 24 · **compileSdk:** 36 · **Kotlin:** 2.0.x · **Version:** 1.0.3  
+> **minSdk:** 24 · **compileSdk:** 36 · **Kotlin:** 2.0.x · **Version:** 1.0.4  
 > **Distribution:** JitPack / local Maven (`build/repo`)  
 > **Related:** [integration.md](integration.md)
 
@@ -280,7 +280,7 @@ flowchart LR
 **Module:** `:bnotifyplugin`  
 **Class:** `com.convex.bnotifyplugin.MainGradlePlugin`  
 **Plugin ID:** `com.github.bnotifysdk.bnotifyplugin`  
-**Published as:** `com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.3` (JitPack) / `com.github.bnotify:bnotifyplugin:1.0.3` (flat)
+**Published as:** `com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.4` (JitPack) / `com.github.bnotify:bnotifyplugin:1.0.4` (flat)
 
 ### What it does
 
