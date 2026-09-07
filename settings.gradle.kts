@@ -23,7 +23,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MnotifySDK"
+rootProject.name = "BNotifySDK"
 include(":app")
-include(":mnotifysdk")
-include(":mnotifyplugin")
+include(":bnotifysdk")
+include(":bnotifyplugin")

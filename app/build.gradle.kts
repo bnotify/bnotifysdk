@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.convex.mnotifysdk"
+    namespace = "com.convex.bnotifysdk"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.convex.mnotifysdk"
+        applicationId = "com.convex.bnotifysdk"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
