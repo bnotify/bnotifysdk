@@ -32,7 +32,7 @@ Also add the same `maven { url = uri("https://jitpack.io") }` under `pluginManag
 
 ```kotlin
 dependencies {
-    implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.4")
+    implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.5")
 }
 ```
 
@@ -43,7 +43,7 @@ dependencies {
 buildscript {
     repositories { maven { url = uri("https://jitpack.io") } }
     dependencies {
-        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.4")
+        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.5")
     }
 }
 

@@ -20,18 +20,25 @@ object ActivityTracker : Application.ActivityLifecycleCallbacks {
 
     fun getCurrentActivity(): Activity? = currentActivity
 
+    private fun requestInAppFetch() {
+        Log.d("FIAM", "SocketManager: requesting in-app campaigns")
+        val json = JSONObject().apply {
+            put("trigger", "on_foreground")
+        }
+        SocketManager.handleInAppMessagesImpression("inapp:fetch", json)
+    }
+
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         Log.i("FIAM.Display", "onActivityCreated: ${activity::class.java.simpleName}")
 
         SocketManager.setSocketConnectListener(object : SocketManager.OnSocketConnectListener{
             override fun onConnected() {
-                Log.d("FIAM", "SocketManager: socket connected, sending in-app impression")
-                val json = JSONObject().apply {
-                    put("trigger", "on_foreground")
-                }
-                SocketManager.handleInAppMessagesImpression("inapp:fetch", json)
+                requestInAppFetch()
             }
         })
+        if (SocketManager.isConnected()) {
+            requestInAppFetch()
+        }
     }
 
     override fun onActivityStarted(activity: Activity) {

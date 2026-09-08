@@ -2,7 +2,7 @@
 
 > **Audience:** Android developers integrating BNotify into any app  
 > **Artifacts:** `bnotifysdk` (library) + `bnotifyplugin` (Gradle plugin)  
-> **Version example:** `1.0.4`  
+> **Version example:** `1.0.5`  
 > **Related:** [documentation.md](documentation.md) (architecture & internals)
 
 This guide shows **exactly how to integrate** the SDK the way production apps do: JitPack repositories, plugin classpath, dependency, config JSON, `Application` init, Activity intent handling, and a custom `BNotifyMessagingService`.
@@ -148,9 +148,9 @@ buildscript {
     }
     dependencies {
         // BNotify Gradle plugin (generates GeneratedConfig from bnotify-config.json)
-        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.4")
+        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.5")
         // Flat local-publish fallback (mavenLocal / custom repo):
-        // classpath("com.github.bnotify:bnotifyplugin:1.0.4")
+        // classpath("com.github.bnotify:bnotifyplugin:1.0.5")
     }
 }
 ```
@@ -161,8 +161,8 @@ Depending on how the GitHub repo is published to JitPack, coordinates may appear
 
 | Form | Example |
 |------|---------|
-| JitPack multi-module | `com.github.bnotify.bnotifysdk:bnotifysdk:1.0.4` |
-| Flat (mavenLocal / custom) | `com.github.bnotify:bnotifysdk:1.0.4` |
+| JitPack multi-module | `com.github.bnotify.bnotifysdk:bnotifysdk:1.0.5` |
+| Flat (mavenLocal / custom) | `com.github.bnotify:bnotifysdk:1.0.5` |
 
 Use the coordinate from your release / JitPack build page. Plugin apply id remains:
 
@@ -196,7 +196,7 @@ android {
 
 dependencies {
     // BNotify Android SDK
-    implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.4")
+    implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.5")
 
     // your other dependencies...
 }
@@ -749,7 +749,7 @@ buildscript {
         maven(url = "https://jitpack.io")
     }
     dependencies {
-        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.4")
+        classpath("com.github.bnotify.bnotifysdk:bnotifyplugin:1.0.5")
     }
 }
 ```
@@ -757,7 +757,7 @@ buildscript {
 ### App build.gradle.kts (snippet)
 
 ```kotlin
-implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.4")
+implementation("com.github.bnotify.bnotifysdk:bnotifysdk:1.0.5")
 apply(plugin = "com.github.bnotifysdk.bnotifyplugin")
 ```
 

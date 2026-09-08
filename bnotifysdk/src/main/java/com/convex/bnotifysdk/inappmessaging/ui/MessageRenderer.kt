@@ -1,7 +1,7 @@
 package com.convex.bnotifysdk.inappmessaging.ui
 
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.convex.bnotifysdk.inappmessaging.InAppMessenger
 import com.convex.bnotifysdk.inappmessaging.fragments.*
 import com.convex.bnotifysdk.inappmessaging.model.CampaignModel
@@ -33,7 +33,13 @@ object MessageRenderer {
         }
         currentCampaignId = campaign.id
 
-        val fm = (activity as? AppCompatActivity)?.supportFragmentManager ?: return
+        val fm = (activity as? FragmentActivity)?.supportFragmentManager ?: run {
+            Log.e(
+                "FIAM.Display",
+                "Activity ${activity::class.java.name} is not a FragmentActivity; cannot show in-app message",
+            )
+            return
+        }
         var fragment: BaseMessageFragment? = null
         /*var fragment: BaseMessageFragment = when (campaign.content.type.lowercase()) {
             "card" -> {
