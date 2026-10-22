@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.parcelize)
     id("maven-publish")
 }
-val SDKVersion = "1.0.5" // Define once for consistency
+val SDKVersion = "1.0.6" // Define once for consistency
 
 android {
     namespace = "com.convex.bnotifysdk"

@@ -5,7 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import androidx.fragment.app.FragmentActivity
 import com.convex.bnotifysdk.inappmessaging.fetcher.CampaignFetcher
+import com.convex.bnotifysdk.inappmessaging.fragments.BaseMessageFragment
 import com.convex.bnotifysdk.inappmessaging.matcher.CampaignMatcher
 import com.convex.bnotifysdk.inappmessaging.model.CTA
 import com.convex.bnotifysdk.inappmessaging.model.CTASecondary
@@ -30,6 +32,17 @@ object InAppMessenger {
     private val pendingQueue: Queue<CampaignModel> = LinkedList()
     private var isFreshInstall: Boolean = false
     private var isTestDevice: Boolean = false
+
+    /**
+     * Opt-in. When false, in-app UI behaves exactly as before.
+     * The Flutter plugin sets this so a campaign can be queued off a disallowed route
+     * without incrementing [CampaignStorage.markShown].
+     */
+    @Volatile
+    private var presentationGateConfigured: Boolean = false
+
+    @Volatile
+    private var presentationEnabled: Boolean = true
 
     fun init(context: Context, response: String) {
         CampaignStorage.saveCachedCampaigns(context, response)
@@ -98,7 +111,35 @@ object InAppMessenger {
         }
     }
 
+    /**
+     * When [configured] is false, presentation stays unrestricted.
+     * When [configured] is true and [enabled] is false, campaigns are queued and any
+     * visible in-app dialog is dismissed. [CampaignStorage.markShown] runs only inside
+     * [MessageRenderer.show], so a queued campaign does not consume `maxPerDay`.
+     */
+    fun setPresentationGate(configured: Boolean, enabled: Boolean) {
+        val wasAllowed = presentationAllowed()
+        presentationGateConfigured = configured
+        presentationEnabled = enabled
+        if (presentationAllowed()) {
+            if (!wasAllowed) {
+                flushPendingQueueIfAny()
+            }
+        } else {
+            dismissVisibleMessage()
+        }
+    }
+
+    private fun presentationAllowed(): Boolean {
+        return !presentationGateConfigured || presentationEnabled
+    }
+
     internal fun showCampaign(campaign: CampaignModel) {
+        if (!presentationAllowed()) {
+            Log.d("FIAM.Headless", "Presentation gated; enqueuing campaign: ${campaign.id}")
+            enqueueCampaign(campaign)
+            return
+        }
         MessageRenderer.show(campaign)
     }
 
@@ -111,6 +152,7 @@ object InAppMessenger {
     }
 
     internal fun flushPendingQueueIfAny() {
+        if (!presentationAllowed()) return
         synchronized(pendingQueue) {
             if (pendingQueue.isEmpty()) return
             val next = pendingQueue.poll()
@@ -119,6 +161,19 @@ object InAppMessenger {
                 showCampaign(it)
             }
         }
+    }
+
+    /**
+     * Closes a message that was already presented. Does not enqueue it again:
+     * that presentation already counted toward `maxPerDay`.
+     */
+    private fun dismissVisibleMessage() {
+        val activity = ActivityTracker.getCurrentActivity() as? FragmentActivity ?: return
+        val fragment = activity.supportFragmentManager.findFragmentByTag("InAppMessage") as? BaseMessageFragment
+            ?: return
+        fragment.setDismissListener { }
+        fragment.dismissAllowingStateLoss()
+        MessageRenderer.clear()
     }
 
     fun onMessageDismissed(campaign: CampaignModel) {
